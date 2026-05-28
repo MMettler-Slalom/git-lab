@@ -438,3 +438,21 @@
 - Engagement timeline (60–90 days hypothetical)?
 - Will Amazon Legal or other pro bono partners be looped in?
 - Does the deliverable need IP/ownership clarity given the asylum chatbot precedent?
+
+---
+
+## Suggested Follow-Up Agenda
+
+**Priority items** (deferred decisions needing resolution):
+1. Confirm deliverable format and scope — which of the 7 feature areas advance to prototype vs. concept (20 min)
+2. Decide hybrid supply-request model: which requests go family-direct vs. staff-mediated (15 min)
+
+**Status checks** (action items from this meeting):
+1. Casey: validation email sent and Mary's Place feedback received? (5 min)
+2. Casey/Lauren: care coordinator + warehouse/donations interviews scheduled? (5 min)
+
+**Open questions to address:**
+1. Engagement timeline — confirm 60–90 day window and key milestones (10 min)
+2. IP/ownership approach for any prototype, given the asylum-chatbot precedent (10 min)
+
+*Estimated total: 65 minutes — consider trimming if the next meeting is a 60-min slot.*

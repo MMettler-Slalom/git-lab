@@ -1,11 +1,12 @@
 ---
 name: meeting-notes
 description: Transforms meeting transcripts into feature-organized product management
-  notes using a two-pass approach. First identifies features and topics discussed,
+  notes using a three-pass approach. First identifies features and topics discussed,
   then extracts requirements, decisions (tracking how they evolved), action items,
-  and open questions per feature. Use when a PM has a meeting transcript where
-  multiple features or requirements were discussed and needs structured,
-  feature-by-feature notes rather than chronological summaries.
+  and open questions per feature, and finally generates a prioritized follow-up
+  meeting agenda. Use when a PM has a meeting transcript where multiple features
+  or requirements were discussed and needs structured, feature-by-feature notes
+  rather than chronological summaries.
 ---
 
 # Feature-Organized Meeting Notes
@@ -124,6 +125,61 @@ After all features are extracted, present a **cross-cutting summary**:
 **Next Steps:** [synthesize what logically comes next]
 ```
 
+### Pass 3: Follow-Up Agenda Generation
+
+After the cross-cutting summary, generate a **prioritized agenda for the next
+meeting**. This turns the open loops from Pass 2 into an actionable schedule the
+PM can drop straight into a calendar invite.
+
+**Source the agenda from three buckets, in this priority order:**
+
+1. **Priority items** — Decisions marked **Tentative**, **Needs follow-up**, or
+   **Deferred** in Pass 2. These are the highest-value items because the group
+   needs to *resolve* something, not just share status.
+2. **Status checks** — Action items from this meeting that should be reported on
+   before the group can move forward. Keep these tight (5 min each).
+3. **Open questions to address** — The most consequential unanswered questions
+   from Pass 2. Do not dump every open question; select 2–4 that block downstream
+   work or that the right participants will be in the room to answer.
+
+**For each item, estimate a time box** based on complexity:
+- Status checks: 5 min
+- Targeted open questions: 10 min
+- Decisions requiring discussion: 15–20 min
+- Scope/strategy decisions: 20+ min
+
+**Append the total** so the PM can sanity-check whether the agenda fits a
+realistic meeting length (typically 30–60 min).
+
+**Format (follow exactly):**
+
+```markdown
+## Suggested Follow-Up Agenda
+
+**Priority items** (deferred decisions needing resolution):
+1. Finalize scope: single product vs. separate intake and inventory systems (15 min)
+2. AI virtual advocate feasibility — review technical options (20 min)
+
+**Status checks** (action items from this meeting):
+1. Jason: current intake form shared with team? (5 min)
+2. Mike: inventory data from last quarter pulled? (5 min)
+
+**Open questions to address:**
+1. Budget ceiling for Phase 1 (10 min)
+2. Staffing plan for implementation support (10 min)
+
+*Estimated total: 65 minutes*
+```
+
+**Guidelines:**
+- Restart numbering at 1 within each bucket so each section is formatted consistently.
+- Phrase each item as a short outcome or question, not a topic label.
+- For status checks, name the assignee directly.
+- Omit a bucket entirely if it has no items (e.g., if there are no tentative
+  decisions, skip the "Priority items" header).
+- If the estimated total exceeds 60 min, flag it: "*Estimated total: 85 minutes
+  — consider splitting across two meetings or trimming open questions.*"
+
 ## Output Format
 
 Write the final notes to a file: `meeting-notes-{topic-or-date}.md`
@@ -158,6 +214,9 @@ Structure:
 
 ## All Open Questions (Consolidated)
 [Single list for easy follow-up planning]
+
+## Suggested Follow-Up Agenda
+[Prioritized, time-boxed agenda for the next meeting — see Pass 3]
 ```
 
 ## Key Instructions
@@ -177,3 +236,4 @@ Structure:
 - Invent requirements that weren't discussed — flag gaps as open questions instead
 - Over-extract from casual asides — focus on substantive discussion
 - Generate all features at once without checking in between
+- Dump every open question into the follow-up agenda — select the 2–4 that matter most
